@@ -2,7 +2,6 @@ const cacheName = 'Ismail classroom'
 const cacheFiles = [
   'index.html',
   'cw3.webmanifest',
-  'subjects.js',
   'images/cr.png',
   'images/cr2.png',
   'images/econs.jpg',
