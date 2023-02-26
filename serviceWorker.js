@@ -1,5 +1,5 @@
-const cacheName = 'Ismail classroom'
-const cacheFiles = [
+var cacheName = 'Ismail classroom';
+var cacheFiles = [
   'index.html',
   'cw3.webmanifest',
   'images/cr.png',
@@ -12,16 +12,17 @@ const cacheFiles = [
   'images/ui.jpg',
   'images/web.jpg',
   'images/zero.png',
-]
+];
 
 // CACHING THE FILES IN THE SERVICE WORKER (cacheFiles)
 self.addEventListener('install', (e) => {
-  console.log('[Service Worker] Install')
+  console.log('[Service Worker] Install');
   e.waitUntil (caches.open(cacheName).then((cache) => {
-    console.log('[Service Worker] Caching all files')
-    return cache.addAll(cacheFiles)
-  }))
-})
+    console.log('[Service Worker] Caching all files');
+    return cache.addAll(cacheFiles);
+  })
+  );
+});
 
 // CACHING NEW FILES
 self.addEventListener('fetch', function (e) {
@@ -30,9 +31,10 @@ self.addEventListener('fetch', function (e) {
     return r || fetch(e.request).then(function (response) {
       // add the new file to cache
       return caches.open(cacheName).then(function (cache) {
-        cache.put(e.request, response.clone())
+        cache.put(e.request, response.clone());
         return response;
-      })
-    })
-  }))
-})
+      });
+    });
+  })
+  );
+});
