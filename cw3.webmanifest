@@ -7,7 +7,7 @@
         { "src":  "images/cr2.png", "sizes": "192x192", "type": "image/png" }
       ],
 
-    "start_url": "Self.html",
+    "start_url": "index.html",
     "display": "fullscreen",
     "background_color": "#0000"
   }
